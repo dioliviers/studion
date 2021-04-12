@@ -1,11 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Roboto&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/fontawesome.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css');
 
 * {
   box-sizing: border-box;
 }
 
 :root {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   --color-copy: #333;
   --color-primary: #ffc500;
@@ -41,8 +43,8 @@ ul {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #000;
-  color:#fff;
+  background-color: #000; /* vermelho / verde / azul / transparência - 0 - F */
+  color: #fff;
 }
 
 .navbar__container {
@@ -53,7 +55,6 @@ ul {
   width: 100vw;
   height: 7.75rem;
   padding: 0 1rem;
-  
 }
 
 .navbar__links {
@@ -85,6 +86,7 @@ ul {
 }
 
 .logo-studion__subtitle {
+  display: block;
   font-size: 0.875rem;
   font-weight: 300;
 }
@@ -100,7 +102,7 @@ ul {
 
 .slide {
   position: relative;
-  height: calc(100vh - 7.75rem);
+  height: calc(90vh - 7.75rem);
 }
 
 .slide__background-image {
@@ -112,8 +114,14 @@ ul {
 
 .slide__copy {
   position: absolute;
-  top: 6.25rem;
-  left: 50vw;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  padding-left: 50vw;
+  align-items: center;
 }
 
 .slide__copy h6 {
@@ -121,6 +129,7 @@ ul {
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.1875rem;
+  margin: 0;
 }
 
 .slide__copy h2 {
@@ -155,7 +164,7 @@ ul {
   color: #fff;
 }
 
-#counter {
+.counter {
   background-color: var(--color-primary);
   color: #fff;
   text-transform: uppercase;
@@ -165,7 +174,7 @@ ul {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   place-items: center;
-  padding: 4.375rem 1rem;
+  padding: 4.375rem 0;
 }
 
 .counter__container h3 {
@@ -182,15 +191,15 @@ ul {
   grid-template-columns: auto auto;
   gap: 3.125rem;
   align-items: center;
-  padding: 4.375rem 0;
+  padding: 4.375rem;
 }
 
 .institutional__image {
   max-width: 550px;
 }
 
-.institutional__copy {c
-  padding: 0 1.875rem 0 0;
+.institutional__copy {
+  padding: 0 1.875rem;
 }
 
 .institutional__copy h6 {
@@ -207,66 +216,145 @@ ul {
 }
 
 .institutional p {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.0625rem;
   line-height: 1.6875rem;
+  margin-bottom: 0;
   margin-bottom: 2.5rem;
 }
 
 .btn--institutional:hover {
   color: var(--color-copy);
   background: unset;
-  box-shadow: o 1rem 1rem #006;
+  box-shadow: 0 1rem 1rem #0006; /* x, y, blur, cor */
 }
-.quote{
-  
-  background-image: url(./images/parallax.jpg);
 
+.quote {
+  background-image: url(./images/parallax.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
-.quote__container{
+.quote__container {
   display: grid;
   align-items: center;
-  justify-items:end;
+  justify-items: end;
   min-height: 80vh;
- 
 }
 
-.quote__copy{
-  background-color:#fff;
-  padding:5.625rem 4.375rem;
+.quote__copy {
+  background-color: #fff;
+  padding: 5.625rem 4.375rem;
 }
 
-.quote__copy h6{
-  font-size:0.9375rem;
-  font-weight:400;
-  letter-spacing: 0.1875rem;
+.quote__copy h6 {
+  font-size: .9375rem;
+  font-weight: 400;
+  letter-spacing: .1875rem;
   line-height: 1.4375rem;
-  max-width:53ch;
+  max-width: 53ch;
   text-transform: uppercase;
   margin: 0;
-  
- 
 }
-.quote__copy h2{ 
-   font-size: 5rem;
-   line-height: 5rem;
-   text-transform: uppercase;
-   letter-spacing:-0.1875rem; 
-   margin: 1.875rem 0;
-   
+
+.quote__copy h2 {
+  font-size: 5rem;
+  line-height: 5rem;
+  text-transform: uppercase;
+  letter-spacing: -.1875rem;
+  margin: 1.875rem 0;
 }
 
 .quote__copy h2 span {
   display: block;
 }
 
-.btn--quote{
+.btn--quote {
   color: var(--color-copy);
   border-color: var(--color-copy);
   background: unset;
+}
+
+.footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  align-items: center;
+  border-bottom: 0.1rem solid #FFF3;
+  padding: 5rem 0;
+}
+
+.footer .logo-studion {
+  justify-self: start;
+  margin: 0;
+}
+
+.footer__form {
+  display: grid;
+  grid-template-columns: 9ch auto;
+  gap: 1.375rem;
+  align-items: center;
+}
+
+.footer__form label {
+  font-size: .875rem;
+  font-weight: 300;
+  line-height: 1rem;
+}
+
+.footer__form__email {
+  display: grid;
+  grid-template-columns: auto 3.375rem;
+}
+
+.footer__form input {
+  background-color: var(--color-primary);
+  border: unset;
+  font-size: .875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1rem;
+  color: #000;
+}
+
+.footer__form input::placeholder {
+  color: #000;
+}
+
+.footer__form button {
+  cursor: pointer;
+  transition: 0.3s all ease;
+}
+
+.footer__form button:hover {
+  background-color: #000;
+  color: #FFF;
+}
+
+.footer__social {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: .5rem;
+  justify-self: end;
+}
+
+.footer__social a,
+.footer__social a:hover,
+.footer__social a:visited {
+  color: white;
+}
+
+.footer__social .fa-twitter {
+  color: #000;
+}
+
+.footer p {
+  margin: 2.5rem 0;
 }
